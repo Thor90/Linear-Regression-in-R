@@ -1,0 +1,15 @@
+1. Simple linear regression:
+  yi =β0 +β1xi +εi [1.0]
+
+# R
+Model_1.0<-lm(DV(yi)~IV(xi), data=TRUE)
+summary(Model_1.0)
+anova(Model_1.0)
+
+2. Multiple regression:
+  yi =β0 +β1x1i +β2x2i +εi [1.1]
+  
+# R
+Model_1.1<-lm(DV(yi)~IV(x1i)+IV(x2i), data=TRUE) #note that there is there is 2 IV inserted in this formula.
+summary(Model_1.1)
+anova(Model_1.1)
