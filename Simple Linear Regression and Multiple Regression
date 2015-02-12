@@ -10,6 +10,6 @@ anova(Model_1.0)
   yi =β0 +β1x1i +β2x2i +εi [1.1]
   
 # R
-Model_1.1<-lm(DV(yi)~IV(x1i)+IV(x2i), data=TRUE) #note that there is there is 2 IV inserted in this formula.
+Model_1.1<-lm(DV(yi)~IV(x1i)+IV(x2i), data=TRUE) #note that there is there is 2 IV(s) inserted in this formula.
 summary(Model_1.1)
 anova(Model_1.1)
