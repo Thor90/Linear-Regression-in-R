@@ -1,0 +1,33 @@
+# Simple linear regression
+- The probability distribution of a random variable Y may depend on the value X of some predictor variable.
+# R
+aa<-lm(y~x1, data=dataset)
+summary(aa)
+plot(aa) # examine the dataset
+abline(aa) # plot the line of the model
+
+# Multiple linear regression
+- Probability distribution of Y depends on several prdictor variables simultaneously.
+# R
+bb<-lm(y~x1+x2, data=dataset, data=na.omit(dataset)) # for imcomplete data
+summary(bb)
+
+# Use anova() fuction to compare models
+anova(aa,bb)
+
+# Modeling interactions
+- assess the extent to which the association between one predictor and the outcome depends on a second predictor.
+# R
+bb1<-lm(y~x1*x2, data=dataset) # interaction
+
+# Regression with dummy variables
+str(dataset$sex) # example using gender
+dataset$gender<-factor(dataset$sex)
+is.factor(sex)
+levels(sex)
+contrasts(dataset$sex)
+cc<-lm(y~sex, data=dataset)
+# Alternatively;
+cc1<-lm(y~C(sex, base=2), data=dataset) # change reference group
+cc2<-lm(y~C(sex, contr.helmert), data=dataset) # change coding scheme
+
